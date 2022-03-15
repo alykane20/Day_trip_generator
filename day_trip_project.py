@@ -1,5 +1,6 @@
 import random
 
+# options for building trip
 destinations = ["Boston, MA", "Dublin, Ireland", "Costa Rica", "Kenya"]
 transportations = ["Car", "Private jet", "Train", "Yacht"]
 restaurants = ["McDonalds", "California Taco", "Smashburger", "Pizzagando"]
@@ -13,9 +14,10 @@ def welcome_to_pick_your_trip():
     else:
         print("Enjoy your weekend at home!")
 
-def chose_random_option(list):
+def chose_random_option(list, decription_of_item):
     option_chosen = (random.choice(list))
-    print(f"We have chosen: {option_chosen}")
+    print(decription_of_item) 
+    print(f"{option_chosen}")
     option_ok_by_user = input("Is this ok? y/n:")
     while option_ok_by_user != "y":
         option_chosen = (random.choice(list))
@@ -26,10 +28,10 @@ def chose_random_option(list):
   
 def build_your_weekend_trip():
     welcome_to_pick_your_trip()
-    final_destination = chose_random_option(destinations)
-    final_transportation = chose_random_option(transportations)
-    final_restaurant = chose_random_option(restaurants)
-    final_entertainment = chose_random_option(entertainment)
+    final_destination = chose_random_option(destinations, "You will be traveling to:")
+    final_transportation = chose_random_option(transportations, "You will arrive by:")
+    final_restaurant = chose_random_option(restaurants, "Dinner reservations at:")
+    final_entertainment = chose_random_option(entertainment, "You will have fun at:")
     print("Congrats! Here is what you've decided to do:") 
     print(f"Destination: {final_destination}")
     print(f"Transportation: {final_transportation}")

@@ -1,0 +1,88 @@
+destinations = ["Boston", "Dublin", "Costa Rica", "Kenya"]
+transportations = ["car", "airplane", "train", "skateboard"]
+restaurants = ["McDonalds", "California Taco", "Smashburger", "Pizzagando"]
+entertainment = ["soccer game", "concert", "puppet show", "board game"]
+
+import random
+
+def welcome_to_pick_your_trip():
+    user_wants_trip = input("Would you like to go on a trip this weekend? y/n")
+    if user_wants_trip == "y":
+        print("Great! Let's pick a destination!")
+    else:
+        print("Enjoy your weekend at home!")
+
+def chose_destination(list_of_destinations):
+    location_chosen = (random.choice(destinations))
+    print(f"We have chosen: {location_chosen}")
+    location_ok_by_user = input("Is this ok? y/n:")
+    while location_ok_by_user != "y":
+        location_chosen = (random.choice(destinations))
+        print(f"How about: {location_chosen}")
+        location_ok_by_user = input("Is this ok? y/n:")
+    print("Awesome, Let's figure out how to get there!")
+    return location_chosen
+
+
+def chose_transport(list_of_transportation):
+    transport_chosen = (random.choice(transportations))
+    print(f"We have chosen: {transport_chosen}")
+    transport_ok_by_user = input("Is this ok? y/n:")
+    while transport_ok_by_user != "y":
+        transport_chosen = (random.choice(transportations))
+        print(f"How about: {transport_chosen}")
+        input("Is this ok? y/n:")
+        transport_ok_by_user = input("Is this ok? y/n:")
+    print("Sounds good, now we can pick somewhere to eat")
+    return transport_chosen
+
+def chose_restaurant(list_of_restaurants):
+    restaurant_chosen = (random.choice(restaurants))
+    print(f"We have chosen: {restaurant_chosen}")
+    restaurant_ok_by_user = input("Is this ok? y/n:")
+    while restaurant_ok_by_user != "y":
+        restaurant_chosen = (random.choice(restaurants))
+        print(f"How about: {restaurant_chosen}")
+        input("Is this ok? y/n:")
+        restaurant_ok_by_user= input("Is this ok? y/n:")
+    print("Great! Time to be entertained!")
+    return restaurant_chosen
+    
+
+def chose_entertainment(list_of_entertainment):
+    entertainment_chosen = (random.choice(entertainment))
+    print(f"We have chosen: {entertainment_chosen}")
+    entertainment_ok_by_user = input("Is this ok? y/n:")
+    while entertainment_ok_by_user != "y":
+        entertainment_chosen = (random.choice(entertainment))
+        print(f"How about: {entertainment_chosen}")
+        input("Is this ok? y/n:")
+        entertainment_ok_by_user = input("Is this ok? y/n:")
+    print("Sounds fun!")
+    return entertainment_chosen
+    
+    
+def build_your_weekend_trip():
+    welcome_to_pick_your_trip()
+    final_destination = chose_destination(destinations)
+    final_transportation = chose_transport(transportations)
+    final_restaurant = chose_restaurant(restaurants)
+    final_entertainment = chose_entertainment(entertainment)
+    print("Congrats! Here is what you've chosen:") 
+    print(f"Destination: {final_destination}")
+    print(f"Transportation: {final_transportation}")
+    print(f"Restaurant: {final_restaurant}")
+    print(f"Entertainment: {final_entertainment}")
+    confirmation_user_choice = input("Does this trip look good? y/n:")
+    print(f"You will be traveling to {final_destination} by {final_transportation}, for dinner, you will eat at local favorite {final_restaurant}, and then attend {final_entertainment}")
+
+
+build_your_weekend_trip()
+
+
+             
+
+
+
+
+
